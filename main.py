@@ -30,8 +30,7 @@ bday_file = pd.read_csv("birthdays.csv")
 bday_today_list = {data_row["name"]: data_row["email"] for (data_index, data_row) in bday_file.iterrows()
               if data_row.month == month and data_row.day == day}
 
-rand_num = randint(1,3)
-with open(f"letter_templates\\letter_{rand_num}.txt") as file:
+with open(f"letter_templates\\letter_{randint(1,3)}.txt") as file:
     letter = file.read()
 
     for index, email in bday_today_list.items():
